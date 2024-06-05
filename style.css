@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header{
     border-bottom: 1px solid #E2E8F0;
 }
@@ -49,3 +50,56 @@
     font-weight: 500;
     color: #482ff7;
 }
+=======
+[id="h22"]{
+    background-color: #366cca;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+[id="h11"]{
+    background-color: #6b92d6;
+    
+    padding: 1rem;
+    text-align: center;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    header {
+        background-color: #366cca;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+    main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    h1 {
+        color: #f0e9e9;
+    }
+    .step {
+        background: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .step h2 {
+        color: #000000;
+    }
+    [id="44"]{
+        background-color: #366cca;
+        color: rgb(55, 128, 225);
+        padding: 1rem;
+        text-align: center;
+
+    }
+>>>>>>> efe708a594cad0172d1a0ba8aa68dc9b7369db81

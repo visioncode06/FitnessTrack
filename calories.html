@@ -1,0 +1,71 @@
+git p<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Tracker</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+
+<body>
+    <header>
+        <h1>Nutrition Tracker</h1>
+        <p>Track your meals and achieve your nutritional goals</p>
+    </header>
+    <main>
+        <h1>Log Your Meal</h1>
+        <div class="form-section">
+            <form id="mealForm">
+                <label for="mealTime">When did you eat the meal?</label>
+                <input type="datetime-local" id="mealTime" name="mealTime" required>
+                <label for="fat">Fat (g)</label>
+                <input type="number" id="fat" name="fat" required>
+                <label for="protein">Protein (g)</label>
+                <input type="number" id="protein" name="protein" required>
+                <label for="calories">Calories</label>
+                <input type="number" id="calories" name="calories" required>
+                <label for="carbs">Carbs (g)</label>
+                <input type="number" id="carbs" name="carbs" required>
+                <label for="sugar">Sugar (g)</label>
+                <input type="number" id="sugar" name="sugar" required>
+                <label for="cost">How much did the meal cost? ($)</label>
+                <input type="number" id="cost" name="cost" step="0.01" required>
+                <button type="button" onclick="logMeal()">Log Meal</button>
+            </form>
+        </div>
+        <h1>Daily Caloric Intake</h1>
+        <div class="form-section">
+            <label for="goalCalories">Choose your daily caloric goal:</label>
+            <select id="goalCalories">
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+                <option value="3000">3000</option>
+                <option value="3500">3500</option>
+            </select>
+            <button type="button" onclick="calculateDailyIntake()">Calculate</button>
+        </div>
+        <div class="result-section">
+            <h2>Daily Summary</h2>
+            <p>Total Calories Consumed: <span id="totalCalories">0</span></p>
+            <p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
+        </div>
+    </main>
+    <script>
+        let totalCalories = 0;
+        function logMeal() {
+            const calories = parseInt(document.getElementById('calories').value);
+            totalCalories += calories;
+            document.getElementById('totalCalories').innerText = totalCalories;
+            alert('Meal logged successfully!');
+        }
+        function calculateDailyIntake() {
+            const goalCalories = parseInt(document.getElementById('goalCalories').value);
+            const remainingCalories = goalCalories - totalCalories;
+            document.getElementById('remainingCalories').innerText = remainingCalories;
+            alert('Daily caloric intake calculated!');
+        }
+    </script>
+</body>
+
+</html>
