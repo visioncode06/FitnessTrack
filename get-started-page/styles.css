@@ -9,3 +9,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.stepText{
+   margin : 20px;
+}
