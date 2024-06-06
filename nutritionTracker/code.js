@@ -9,11 +9,15 @@ const costInput = document.getElementById("cost");
 
 const resultSection = document.querySelector(".result-section");
 const logMealButton = document.getElementById("mealButton");
+const calcCaloriesButton = document.getElementById("calcCalories");
 
 const meals = [];
 //on log meal click => addmeal()
-logMealButton.addEventListener("click", addMeal);
-
+logMealButton.addEventListener("click", () => {
+  logMeal(); //log goes first because add meal clear input which is needed for log meal
+  addMeal();
+});
+calcCaloriesButton.addEventListener("click", calculateDailyIntake);
 function addMeal() {
   //console.log("I was pressed");
   //create html element to add to result section
@@ -47,7 +51,7 @@ function addMeal() {
 //code from thomas' html just moved over here
 let totalCalories = 0;
 function logMeal() {
-  const calories = parseInt(document.getElementById("calories").value);
+  let calories = parseInt(caloriesInput.value);
   totalCalories += calories;
   document.getElementById("totalCalories").innerText = totalCalories;
   alert("Meal logged successfully!");
@@ -58,3 +62,11 @@ function calculateDailyIntake() {
   document.getElementById("remainingCalories").innerText = remainingCalories;
   alert("Daily caloric intake calculated!");
 }
+
+//notes
+/*
+add meal name
+min =0 on inputs
+i need to check all inputs are filled
+daily summary? total cal, can maybe do avg and for all stats
+*/
