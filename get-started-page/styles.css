@@ -2,6 +2,7 @@ html {
     height: 100%;
 }
 
+
 body {
     height: 100%;
     background-color: #5078f2;
@@ -9,6 +10,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
+
+    
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+       
+        font-style: normal;
+        font-variation-settings:"width" 100;
+    
 }
 
 h1{
@@ -47,5 +56,17 @@ background-color: Moccasin;
     
  }
 
+ .section{
+    display: flex;
+ }
+
  .stepText{
     color: rgb(255, 255, 255); }
+
+img{
+    border-radius: 20px;
+    display: flex;
+    
+    height: auto;
+    max-width: 45%;
+}
