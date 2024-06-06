@@ -1,0 +1,57 @@
+header h1 {
+    color: #f5f0f0;
+}
+h1,h2,h3 {
+    color: #13a3dc;
+}
+#trackerContainer{
+    display: flex;
+    border: #13a3dc, solid 1px;
+    justify-content: space-around;
+}
+.tracker{
+    border: #13a3dc, solid 1px;
+    width: 50%
+}
+main{
+    border: #13a3dc, solid 1px;
+
+}
+.checkboxContainer{
+    display: flex;
+
+}
+.checkbox{
+    padding: 0px;
+    margin: 0px;
+    width: 15px;
+    border: 1px solid #ccc;
+}
+.checkboxLabel{
+    margin-left: 20px;
+
+}
+.goalCreator{
+    display: flex;
+}
+.dropdown{
+    width: 200px;
+}
+.operatorSelector{
+    width: 75px;
+}
+.labelContainer{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.addGoal{
+    font-weight: bold;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
