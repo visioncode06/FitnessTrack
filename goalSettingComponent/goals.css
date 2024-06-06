@@ -9,8 +9,11 @@ h1,h2,h3 {
     justify-content: space-around;
 }
 .tracker{
+    /* should width be 50% or 100%*/
+    width: 100%
+}
+.form-section{
     border: #13a3dc, solid 1px;
-    width: 50%
 }
 
 .checkboxContainer{
@@ -53,6 +56,10 @@ h1,h2,h3 {
     display: none;
 }
 #fitnessGoalsContainer, #nutritionalGoalsContainer{
+    display: none;
+}
+
+#calcCalories{ /* <--- can be erased later*/
     display: none;
 }
 

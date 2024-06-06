@@ -19,6 +19,9 @@
         h1 {
             color: #f5f0f0;
         }
+        main h1{
+            color: #04a7ed;
+        }
         .form-section, .result-section {
             background: white;
             margin: 20px 0;

@@ -32,7 +32,7 @@
 				<div id="nutritionalGoalsContainer" class="goalCreaterContainer">
 					<div class="labelContainer">
 						<label for="nutritionalGoals">Choose your Nutritional goals:</label>
-						<div class="addGoal">+</div>
+						<div id="addNutritionGoal" class="addGoal">+</div>
 					</div>
 					<div class="goalCreator">
 						<div>
@@ -46,10 +46,10 @@
 							</select>
 						</div>
 						<div>
-							<select name="operator" class="operatorSelector">
+							<select name="operator" id="nutritionalOperator" class="operatorSelector">
 								<option value="<=">
 									<= </option>
-								<option value="<=">
+								<option value=">=">
 									>= </option>
 							</select>
 						</div>
@@ -88,7 +88,8 @@
 						</div>
 					</div>
 				</div>
-
+				<button id="calcCalories" type="button">Calculate</button>
+				<button id="setGoals" type="button">Set Goals</button>
 			</div>
 
 			<div id="trackerContainer">
@@ -155,6 +156,7 @@
 	</main>
 
 	<script src="./goals.js"></script>
+	<script src="../nutritionTracker/code.js"></script>
 </body>
 
 </html>

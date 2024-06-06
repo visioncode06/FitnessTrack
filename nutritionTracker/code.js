@@ -69,4 +69,5 @@ add meal name
 min =0 on inputs
 i need to check all inputs are filled
 daily summary? total cal, can maybe do avg and for all stats
+selecting specific htmls in css ( h1s)
 */
