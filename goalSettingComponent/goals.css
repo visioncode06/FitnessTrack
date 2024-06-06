@@ -6,17 +6,13 @@ h1,h2,h3 {
 }
 #trackerContainer{
     display: flex;
-    border: #13a3dc, solid 1px;
     justify-content: space-around;
 }
 .tracker{
     border: #13a3dc, solid 1px;
     width: 50%
 }
-main{
-    border: #13a3dc, solid 1px;
 
-}
 .checkboxContainer{
     display: flex;
 
@@ -52,6 +48,11 @@ main{
     height: 10px;
     text-align: center;
     cursor: pointer;
-
+}
+#fitnessSection, #mealSection{
+    display: none;
+}
+#fitnessGoalsContainer, #nutritionalGoalsContainer{
+    display: none;
 }
 
