@@ -31,7 +31,7 @@
                 <input type="number" id="sugar" name="sugar" required>
                 <label for="cost">How much did the meal cost? ($)</label>
                 <input type="number" id="cost" name="cost" step="0.01" required>
-                <button type="button" onclick="logMeal()">Log Meal</button>
+                <button id="mealButton" type="button" onclick="logMeal()">Log Meal</button>
             </form>
         </div>
         <h1>Daily Caloric Intake</h1>
@@ -51,7 +51,7 @@
             <p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
         </div>
     </main>
-    <script>
+    <script src="./code.js">
         let totalCalories = 0;
         function logMeal() {
             const calories = parseInt(document.getElementById('calories').value);
