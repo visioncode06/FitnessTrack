@@ -52,19 +52,7 @@
         </div>
     </main>
     <script src="./code.js">
-        let totalCalories = 0;
-        function logMeal() {
-            const calories = parseInt(document.getElementById('calories').value);
-            totalCalories += calories;
-            document.getElementById('totalCalories').innerText = totalCalories;
-            alert('Meal logged successfully!');
-        }
-        function calculateDailyIntake() {
-            const goalCalories = parseInt(document.getElementById('goalCalories').value);
-            const remainingCalories = goalCalories - totalCalories;
-            document.getElementById('remainingCalories').innerText = remainingCalories;
-            alert('Daily caloric intake calculated!');
-        }
+
     </script>
 </body>
 
