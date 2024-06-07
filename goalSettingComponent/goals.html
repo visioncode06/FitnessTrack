@@ -30,20 +30,10 @@
 				</div>
 
 				<div id="nutritionalGoalsContainer" class="goalCreaterContainer">
-					<div class="labelContainer">
-						<label for="nutritionalGoals">Choose your Nutritional goals:</label>
-						<div id="addNutritionGoal" class="addGoal">+</div>
-					</div>
+					<label for="mealNumValue">Choose your Nutritional goals:</label>
 					<div class="goalCreator">
 						<div>
-							<select class="dropdown" id="nutritionalGoals">
-								<option value="fat">Fat</option>
-								<option value="protein">Protein</option>
-								<option value="calories">Calories</option>
-								<option value="carbs">Carbs</option>
-								<option value="sugar">Sugar</option>
-								<option value="cost">Cost</option>
-							</select>
+							<p>Caloric Intake</p>
 						</div>
 						<div>
 							<select name="operator" id="nutritionalOperator" class="operatorSelector">
@@ -54,7 +44,7 @@
 							</select>
 						</div>
 						<div>
-							<input type="number" id="mealNumValue" name="numValue" step="0.01" min="0" value="0" required>
+							<input type="number" id="mealNumValue" name="numValue" step="500" min="0" value="2000" required>
 						</div>
 					</div>
 				</div>
@@ -119,6 +109,7 @@
 							<h2>Daily Summary</h2>
 							<p>Total Calories Consumed: <span id="totalCalories">0</span></p>
 							<p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
+							<p>Goal Status: <span id="goalStatus">In progress</span></p>
 						</div>
 				</div>
 
@@ -148,6 +139,7 @@
 							<h2>Daily Summary</h2>
 							<p>Total Calories Consumed: <span id="totalCalories">0</span></p>
 							<p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
+							<p>Goal Status: <span id="goalStatus">in progress</span></p>
 						</div>
 				</div>
 			</div>
@@ -156,7 +148,6 @@
 	</main>
 
 	<script src="./goals.js"></script>
-	<script src="../nutritionTracker/code.js"></script>
 </body>
 
 </html>

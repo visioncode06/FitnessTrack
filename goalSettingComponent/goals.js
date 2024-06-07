@@ -1,3 +1,78 @@
+//get reference to each input option
+const mealTimeInput = document.getElementById("mealTime");
+const fatInput = document.getElementById("fat");
+const proteinInput = document.getElementById("protein");
+const caloriesInput = document.getElementById("calories");
+const carbsInput = document.getElementById("carbs");
+const sugarInput = document.getElementById("sugar");
+const costInput = document.getElementById("cost");
+
+const resultSection = document.querySelector(".result-section");
+const logMealButton = document.getElementById("mealButton");
+
+const meals = [];
+//on log meal click => addmeal()
+logMealButton.addEventListener("click", () => {
+  logMeal(); //log goes first because add meal clear input which is needed for log meal
+  addMeal();
+  calculateDailyIntake();
+  updateGoalStatus();
+});
+
+function addMeal() {
+  //console.log("I was pressed");
+  //create html element to add to result section
+  let mealItem = document.createElement("div");
+  mealItem.classList.add("mealItem");
+  mealItem.innerHTML = `
+        <ul>
+        <p> Insert Meal Name</p>
+        <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo"></div>
+            <li>Fat: ${fatInput.value}g</li>
+            <li>protein: ${proteinInput.value}g</li>
+            <li>calories: ${caloriesInput.value}g</li>
+            <li>carbs: ${carbsInput.value}g</li>
+            <li>sugar: ${sugarInput.value}g</li>
+            <li>cost: $${costInput.value}</li>
+          </ul>`;
+  meals.push(mealItem);
+  //add to end of result section (daily summary)
+  resultSection.appendChild(mealItem);
+
+  //clear input values
+  fatInput.value = "";
+  proteinInput.value = "";
+  caloriesInput.value = "";
+  mealTimeInput.value = "";
+  carbsInput.value = "";
+  sugarInput.value = "";
+  costInput.value = "";
+}
+
+//code from thomas' html just moved over here
+let totalCalories = 0;
+function logMeal() {
+  let calories = parseInt(caloriesInput.value);
+  totalCalories += calories;
+  document.getElementById("totalCalories").innerText = totalCalories;
+  alert("Meal logged successfully!");
+}
+
+function calculateDailyIntake() {
+  const goalCalories = parseInt(mealGoals.calories);
+  const remainingCalories = goalCalories - totalCalories;
+  remainingCaloriesText.innerText = remainingCalories;
+}
+
+//notes
+/*
+add meal name
+min =0 on inputs
+i need to check all inputs are filled
+daily summary? total cal, can maybe do avg and for all stats
+selecting specific htmls in css ( h1s)
+*/
+
 //beginning checkboxes
 const mealGoalCheckbox = document.getElementById("mealGoal");
 const fitnessGoalCheckbox = document.getElementById("fitnessGoal");
@@ -25,6 +100,8 @@ const setGoalsButton = document.getElementById("setGoals");
 const mealSection = document.getElementById("mealSection");
 const fitnessSection = document.getElementById("fitnessSection");
 
+const remainingCaloriesText = document.getElementById("remainingCalories");
+
 //*need to hide set goals button if neither checkboxes are checked
 //if meal goal checkbox is checked then show all meal related sections, else hide them
 mealGoalCheckbox.addEventListener("click", (event) => {
@@ -47,56 +124,35 @@ fitnessGoalCheckbox.addEventListener("click", (event) => {
   }
 });
 
-addNutritionGoalButton.addEventListener("click", addNutritionGoal);
-
-function addNutritionGoal() {
-  let newGoal = document.createElement("div");
-  newGoal.classList.add("goalCreator");
-  //maybe create each div so that their info/value can be stored
-  newGoal.innerHTML = `
-    <div>
-        <select class="dropdown" id="nutritionalGoals">
-            <option value="fat">Fat</option>
-            <option value="protein">Protein</option>
-            <option value="calories">Calories</option>
-            <option value="carbs">Carbs</option>
-            <option value="sugar">Sugar</option>
-            <option value="cost">Cost</option>
-        </select>
-    </div>
-    <div>
-        <select name="operator" id="nutritionalOperator" class="operatorSelector">
-            <option value="<=">
-                <= </option>
-            <option value=">=">
-                >= </option>
-        </select>
-    </div>
-    <div>
-        <input type="number" id="mealNumValue" name="numValue" step="0.01" min="0" value="0" required>
-    </div>`;
-
-  nutritionalGoalsContainer.appendChild(newGoal);
-}
-
 setGoalsButton.addEventListener("click", setGoal);
 
 function setGoal() {
-  console.log(dropdownNutritionalGoals.value);
-  console.log(dropdownNutritionalOperator.value);
-  console.log(mealNumValue.value);
   let comparison =
     dropdownNutritionalOperator.value == "<=" ? "at most" : "at least";
-  alert(
-    `Goal: I want my ${dropdownNutritionalGoals.value} intake to be ${comparison} ${mealNumValue.value}g`
-  );
+  remainingCaloriesText.textContent = mealNumValue.value;
+  mealGoals.calories = mealNumValue.value;
+  mealGoals.comparison = dropdownNutritionalOperator.value;
 }
 
+// if <= and if remaaining calories is negative then goal failed, else achieved
+//if >= and if remaining calaries is negative then I achieved, else failed
+const goalStatusText = document.getElementById("goalStatus");
+function updateGoalStatus() {
+  let comparison = mealGoals.comparison;
+  let remainingCalories = parseInt(remainingCaloriesText.textContent);
+  if (comparison === "<=" && remainingCalories < 0) {
+    goalStatusText.textContent = "Goal failed";
+    goalStatusText.style.color = "red";
+  }
+
+  if (comparison === ">=" && remainingCalories < 0) {
+    goalStatusText.textContent = "Goal Achieved";
+    goalStatusText.style.color = "green";
+  }
+}
+
+//object that store all our nutritional goals
 let mealGoals = {
-  fat: 0,
-  protein: 0,
-  calories: 0,
-  carbs: 0,
-  sugar: 0,
-  cost: 0,
+  calories: 500,
+  comparison: "",
 };
