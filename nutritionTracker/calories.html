@@ -20,7 +20,7 @@ git p<!DOCTYPE html>
                 <label for="mealTime">When did you eat the meal?</label>
                 <input type="datetime-local" id="mealTime" name="mealTime" required>
                 <label for="fat">Fat (g)</label>
-                <input type="number" id="fat" name="fat" required>
+                <input type="number" id="fat" name="fat" min="0" required>
                 <label for="protein">Protein (g)</label>
                 <input type="number" id="protein" name="protein" required>
                 <label for="calories">Calories</label>
@@ -31,7 +31,7 @@ git p<!DOCTYPE html>
                 <input type="number" id="sugar" name="sugar" required>
                 <label for="cost">How much did the meal cost? ($)</label>
                 <input type="number" id="cost" name="cost" step="0.01" required>
-                <button type="button" onclick="logMeal()">Log Meal</button>
+                <button id="mealButton" type="button">Log Meal</button>
             </form>
         </div>
         <h1>Daily Caloric Intake</h1>
@@ -43,7 +43,7 @@ git p<!DOCTYPE html>
                 <option value="3000">3000</option>
                 <option value="3500">3500</option>
             </select>
-            <button type="button" onclick="calculateDailyIntake()">Calculate</button>
+            <button id="calcCalories" type="button">Calculate</button>
         </div>
         <div class="result-section">
             <h2>Daily Summary</h2>
@@ -51,20 +51,8 @@ git p<!DOCTYPE html>
             <p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
         </div>
     </main>
-    <script>
-        let totalCalories = 0;
-        function logMeal() {
-            const calories = parseInt(document.getElementById('calories').value);
-            totalCalories += calories;
-            document.getElementById('totalCalories').innerText = totalCalories;
-            alert('Meal logged successfully!');
-        }
-        function calculateDailyIntake() {
-            const goalCalories = parseInt(document.getElementById('goalCalories').value);
-            const remainingCalories = goalCalories - totalCalories;
-            document.getElementById('remainingCalories').innerText = remainingCalories;
-            alert('Daily caloric intake calculated!');
-        }
+    <script src="./code.js">
+
     </script>
 </body>
 
