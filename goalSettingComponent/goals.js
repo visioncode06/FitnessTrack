@@ -1,4 +1,5 @@
 //get reference to each input option
+// MEAL / NUTRITION TRACKER LOGIC
 const mealTimeInput = document.getElementById("mealTime");
 const fatInput = document.getElementById("fat");
 const proteinInput = document.getElementById("protein");
@@ -73,6 +74,7 @@ daily summary? total cal, can maybe do avg and for all stats
 selecting specific htmls in css ( h1s)
 */
 
+//GOAL TRACKER LOGIC
 //beginning checkboxes
 const mealGoalCheckbox = document.getElementById("mealGoal");
 const fitnessGoalCheckbox = document.getElementById("fitnessGoal");
@@ -126,16 +128,25 @@ fitnessGoalCheckbox.addEventListener("click", (event) => {
 
 setGoalsButton.addEventListener("click", setGoal);
 
+//store caloric goals input into mealGoals object
 function setGoal() {
+  /*
   let comparison =
     dropdownNutritionalOperator.value == "<=" ? "at most" : "at least";
+    */
   remainingCaloriesText.textContent = mealNumValue.value;
   mealGoals.calories = mealNumValue.value;
   mealGoals.comparison = dropdownNutritionalOperator.value;
 }
+//object that store all our nutritional goals
+let mealGoals = {
+  calories: 2000,
+  comparison: "",
+};
 
-// if <= and if remaaining calories is negative then goal failed, else achieved
-//if >= and if remaining calaries is negative then I achieved, else failed
+// if <= and if remaining calories is negative then goal failed, else achieved
+//if >= and if remaining calories is negative then I achieved, else failed
+// makeshift end of day button-potentially
 const goalStatusText = document.getElementById("goalStatus");
 function updateGoalStatus() {
   let comparison = mealGoals.comparison;
@@ -150,9 +161,3 @@ function updateGoalStatus() {
     goalStatusText.style.color = "green";
   }
 }
-
-//object that store all our nutritional goals
-let mealGoals = {
-  calories: 500,
-  comparison: "",
-};
