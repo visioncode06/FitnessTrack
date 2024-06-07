@@ -11,8 +11,8 @@
 
 html {
     height: 100%;
-    background: #6441A5; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+    background: rgb(157,200,238);
+    background: radial-gradient(circle, rgba(157,200,238,1) 16%, rgba(94,164,229,1) 63%, rgba(10,117,216,1) 100%);
 }
 
 body {
