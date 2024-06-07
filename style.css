@@ -1,22 +1,15 @@
-.img1, .img2 {
-    width: 100px;
-    height: 90;
-    
-    
-} 
-
-.img1{
-    flex-direction: row;
+.logo{
+    width: px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
 }
-    
-   .img1{
-    display: flex
-    
-   }
-   
-
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
 .ww {
-    width: 100px;
+    width: 125px;
     height: 90;
     display: flex;
     flex-direction:  column
