@@ -6,6 +6,11 @@
     justify-content: space-between;
 }
 
+.black {
+    color: #181818;
+
+}
+
 .ww {
     width: 125px;
     height: 90;
