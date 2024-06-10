@@ -63,3 +63,50 @@ h1,h2,h3 {
     display: none;
 }
 
+.homeButton{
+    display: inline-block;
+    border-radius: 25px;
+}
+.homeButton:hover{
+    scale: 1.1;
+}
+.homeButton a{
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    /* remove underline*/
+    text-decoration: none;
+}
+.homeButton a:hover{
+    color:#13a3dc;
+    background-color: white;
+}
+.mealItem{
+    border: #13a3dc 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+.mealItem li {
+    list-style-type:square;
+}
+.mealItemName{
+    font-weight: bold;
+}
+
+#viewMore{
+    font-style: italic;
+    font-size: small;
+}
+#viewMore:hover{
+    cursor: pointer;
+}
+/* view more content off by default*/
+#viewMoreContent{
+    display: none;
+    font-style: italic;
+    font-size: small;
+}
