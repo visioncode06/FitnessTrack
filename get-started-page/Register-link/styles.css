@@ -269,3 +269,11 @@ header{
   border-width: 4px 0 0;
   background: none;
 }
+
+.logo {
+    width: px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
