@@ -16,6 +16,8 @@ const meals = [];
 //on log meal click => addmeal()
 logMealButton.addEventListener("click", () => {
   logMeal(); //log goes first because add meal clear input which is needed for log meal
+  updateMealStats();
+  updateMealStatsText();
   addMeal();
   calculateDailyIntake();
   updateGoalStatus();
@@ -162,5 +164,70 @@ function updateGoalStatus() {
   if (comparison === ">=" && remainingCalories < 0) {
     goalStatusText.textContent = "Goal Achieved";
     goalStatusText.style.color = "green";
+  }
+}
+
+/* view more code */
+let isViewMoreOn = false; // content hidden by default
+const viewMoreButton = document.getElementById("viewMore");
+const viewMoreContent = document.getElementById("viewMoreContent");
+const viewMoreText = document.getElementById("viewMoreText");
+
+//onclick toggle view more content
+viewMoreButton.addEventListener("click", () => {
+  viewMore();
+});
+
+//get stat texts
+let statsText = [
+  document.getElementById("mealCount"),
+  document.getElementById("fatStats"),
+  document.getElementById("proteinStats"),
+  document.getElementById("carbsStats"),
+  document.getElementById("sugarStats"),
+  document.getElementById("costStats"),
+];
+//set stat texts to meal stats
+function updateMealStatsText() {
+  statsText[0].textContent = mealStats.mealCount;
+  statsText[1].textContent = mealStats.Fat;
+  statsText[2].textContent = mealStats.Protein;
+  statsText[3].textContent = mealStats.Carbs;
+  statsText[4].textContent = mealStats.Sugar;
+  statsText[5].textContent = mealStats.Cost;
+}
+//update meal stats object based on user input
+function updateMealStats() {
+  mealStats.mealCount++;
+  mealStats.Fat += parseInt(fatInput.value);
+  mealStats.Protein += parseInt(proteinInput.value);
+  mealStats.Carbs += parseInt(carbsInput.value);
+  mealStats.Sugar += parseInt(sugarInput.value);
+  mealStats.Cost += parseInt(costInput.value);
+}
+//keep track of meal stats
+const mealStats = {
+  //num of meals
+  mealCount: 0,
+  //all total
+  Fat: 0,
+  Protein: 0,
+  Carbs: 0,
+  Sugar: 0,
+  Cost: 0,
+};
+
+//toggle view more content
+function viewMore() {
+  //flip or toggle value
+  isViewMoreOn = !isViewMoreOn;
+  if (isViewMoreOn) {
+    // if on show content
+    viewMoreText.textContent = "less -";
+    viewMoreContent.style.display = "block";
+  } else {
+    //else hide content
+    viewMoreText.textContent = "more +";
+    viewMoreContent.style.display = "none";
   }
 }

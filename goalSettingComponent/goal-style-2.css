@@ -96,3 +96,17 @@ h1,h2,h3 {
 .mealItemName{
     font-weight: bold;
 }
+
+#viewMore{
+    font-style: italic;
+    font-size: small;
+}
+#viewMore:hover{
+    cursor: pointer;
+}
+/* view more content off by default*/
+#viewMoreContent{
+    display: none;
+    font-style: italic;
+    font-size: small;
+}
