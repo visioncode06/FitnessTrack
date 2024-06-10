@@ -1,0 +1,244 @@
+html {
+    height: 100%;
+}
+
+
+body {
+    height: 100%;
+    background-color: #5078f2;
+    background-image: linear-gradient(315deg, #5078f2 0%, #e9f2f4 74%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+
+    
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+       
+        font-style: normal;
+        font-variation-settings:"width" 100;
+    
+}
+
+#titleHome{
+    color: rgb(88, 81, 81);
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width:inherit;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+
+.stepRegister{
+padding-top: 30px;
+height: 100px;
+width: 300px;
+margin: 0 auto;  
+background-color: Moccasin;
+ text-align: center;
+}
+
+.stepNumber {
+    color: #0E94D9;
+    font-size: 50px;
+    font-weight: 700;
+}
+ .stepTopic {
+    font-size: 1.5rem;
+    font-weight: 700;
+   
+    color: rgb(88, 81, 81);
+    border:solid;
+    border-width:2px;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black; 
+    margin: 0 auto;
+    display: inline;
+    padding: 5px;
+    
+ }
+
+ .section{
+    display: flex;
+    justify-content:space-around ;
+    width: 100%;
+    
+ }
+
+ .stepText{
+    color: rgb(255, 255, 255); }
+
+
+#wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    margin:auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.startPage-img{
+    border-radius: 20px;
+    right: 10px;
+    height: auto;
+    width: 400px;
+}
+
+#registerBtn{
+  
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+.stepText{
+    margin-bottom: 40px;
+}
+.stepbox{
+    margin:20px ;
+    padding: 5px;
+    background-color: rgba(209, 238, 247, 0.541);
+    border-radius: 35px;
+}
+
+footer{
+    margin-bottom: 100px;
+}
+/* .container {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+   }
+   
+   #test img {
+     max-width: 100%;
+     max-height:100%;
+   }
+   
+   .text {
+     font-size: 70px;
+   } */

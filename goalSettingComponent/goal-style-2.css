@@ -1,0 +1,112 @@
+header h1 {
+    color: #f5f0f0;
+}
+h1,h2,h3 {
+    color: #13a3dc;
+}
+#trackerContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.tracker{
+    /* should width be 50% or 100%*/
+    width: 100%
+}
+.form-section{
+    border: #13a3dc, solid 1px;
+}
+
+.checkboxContainer{
+    display: flex;
+
+}
+.checkbox{
+    padding: 0px;
+    margin: 0px;
+    width: 15px;
+    border: 1px solid #ccc;
+}
+.checkboxLabel{
+    margin-left: 20px;
+
+}
+.goalCreator{
+    display: flex;
+}
+.dropdown{
+    width: 200px;
+}
+.operatorSelector{
+    width: 75px;
+}
+.labelContainer{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.addGoal{
+    font-weight: bold;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+#fitnessSection, #mealSection{
+    display: none;
+}
+#fitnessGoalsContainer, #nutritionalGoalsContainer{
+    display: none;
+}
+
+#calcCalories{ /* <--- can be erased later*/
+    display: none;
+}
+
+.homeButton{
+    display: inline-block;
+    border-radius: 25px;
+}
+.homeButton:hover{
+    scale: 1.1;
+}
+.homeButton a{
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    /* remove underline*/
+    text-decoration: none;
+}
+.homeButton a:hover{
+    color:#13a3dc;
+    background-color: white;
+}
+.mealItem{
+    border: #13a3dc 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+.mealItem li {
+    list-style-type:square;
+}
+.mealItemName{
+    font-weight: bold;
+}
+
+#viewMore{
+    font-style: italic;
+    font-size: small;
+}
+#viewMore:hover{
+    cursor: pointer;
+}
+/* view more content off by default*/
+#viewMoreContent{
+    display: none;
+    font-style: italic;
+    font-size: small;
+}

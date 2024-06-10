@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Set Your Goals</title>
+	<!-- using same style from nutrition tracker-->
+	<link rel="stylesheet" href="./goal-style-1.css">
+	<link rel="stylesheet" href="./goal-style-2.css">
+</head>
+
+<body>
+	<header>
+		<h1>Achieve Your Goals</h1>
+		<p>Track your meals and fitness to achieve your health goals</p>
+		<div class="homeButton"><a href="../index.html">🏠Home</a></div>
+	</header>
+
+	<main>
+		<h2>Create Your Goals</h1>
+			<div class="form-section">
+				<p>What type of goals do you want?</p>
+				<div class="checkboxContainer">
+					<input class="checkbox" type="checkbox" name="meal" id="mealGoal" value="hasMeal">
+					<label class="checkboxLabel" for="mealGoal">Meal Goals</label>
+				</div>
+				<div class="checkboxContainer">
+					<input class="checkbox" type="checkbox" name="fitness" id="fitnessGoal" value="hasFitness">
+					<label class="checkboxLabel" for="fitnessGoal">Fitness Goals</label>
+				</div>
+
+				<div id="nutritionalGoalsContainer" class="goalCreaterContainer">
+					<label for="mealNumValue">Choose your Nutritional goals:</label>
+					<div class="goalCreator">
+						<div>
+							<p>Caloric Intake</p>
+						</div>
+						<div>
+							<select name="operator" id="nutritionalOperator" class="operatorSelector">
+								<option value="<=">
+									<= </option>
+								<option value=">=">
+									>= </option>
+							</select>
+						</div>
+						<div>
+							<input type="number" id="mealNumValue" name="numValue" step="500" min="0" value="2000" required>
+						</div>
+					</div>
+				</div>
+
+				<div id="fitnessGoalsContainer" class="goalCreaterContainer">
+					<div class="labelContainer">
+						<label for="fitnessGoals">Choose your Fitness goals:</label>
+						<div class="addGoal">+</div>
+					</div>
+					<div class="goalCreator">
+						<div>
+							<select class="dropdown" id="fitnessGoals">
+								<option value="miles">Miles Ran</option>
+								<option value="maxWeight">Max Weight Limit</option>
+								<option value="pushups">Push-Ups</option>
+								<option value="situps">Sit-Ups</option>
+								<option value="squats">squats</option>
+								<option value="jumpRope">Jump Rope</option>
+							</select>
+						</div>
+						<div>
+							<select name="operator" class="operatorSelector">
+								<option value="<=">
+									<= </option>
+								<option value="<=">
+									>= </option>
+							</select>
+						</div>
+						<div>
+							<input type="number" id="fitnessNumValue" name="numValue" step="0.01" min="0" value="0" required>
+						</div>
+					</div>
+				</div>
+				<button id="calcCalories" type="button">Calculate</button>
+				<button id="setGoals" type="button">Set Goals</button>
+			</div>
+
+			<div id="trackerContainer">
+				<div class="tracker" id="mealSection">
+					<h3>Log Your Meal</h1>
+						<div class="form-section">
+							<form id="mealForm">
+								<label for="mealName">What did you eat?</label>
+								<input id="mealName" required placeholder="Enter the Meal" type="text">
+								<label for="mealTime">When did you eat the meal?</label>
+								<input type="datetime-local" id="mealTime" name="mealTime" required>
+								<label for="fat">Fat (g)</label>
+								<input type="number" id="fat" name="fat" value="0" required>
+								<label for="protein">Protein (g)</label>
+								<input type="number" id="protein" name="protein" value="0" required>
+								<label for="calories">Calories</label>
+								<input type="number" id="calories" name="calories" value="0" required>
+								<label for="carbs">Carbs (g)</label>
+								<input type="number" id="carbs" name="carbs" value="0" required>
+								<label for="sugar">Sugar (g)</label>
+								<input type="number" id="sugar" name="sugar" value="0" required>
+								<label for="cost">How much did the meal cost? ($)</label>
+								<input type="number" id="cost" name="cost" step="0.01" value="0" required>
+								<button id="mealButton" type="button">Log Meal</button>
+							</form>
+						</div>
+
+						<div class="result-section">
+							<h2>Daily Summary</h2>
+							<p>Total Calories Consumed: <span id="totalCalories">0</span></p>
+							<p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
+							<p>Goal Status: <span id="goalStatus">In progress</span></p>
+							<div id="viewMore">Click to view <span id="viewMoreText">more +</span></div>
+							<div id="viewMoreContent">
+								<p>Number of Meals: <span id="mealCount">0</span></p>
+								<p>Total Fat: <span id="fatStats">0</span>g</p>
+								<p>Total Protein: <span id="proteinStats">0</span>g</p>
+								<p>Total Carbs: <span id="carbsStats">0</span>g</p>
+								<p>Total Sugar: <span id="sugarStats">0</span>g</p>
+								<p>Total Cost: $<span id="costStats">0</span></p>
+							</div>
+						</div>
+				</div>
+
+				<div class="tracker" id="fitnessSection">
+					<h3>Log Your Exercise</h1>
+						<div class="form-section">
+							<form id="mealForm">
+								<label for="mealTime">When did you eat the meal?</label>
+								<input type="datetime-local" id="mealTime" name="mealTime" required>
+								<label for="fat">Fat (g)</label>
+								<input type="number" id="fat" name="fat" required>
+								<label for="protein">Protein (g)</label>
+								<input type="number" id="protein" name="protein" required>
+								<label for="calories">Calories</label>
+								<input type="number" id="calories" name="calories" required>
+								<label for="carbs">Carbs (g)</label>
+								<input type="number" id="carbs" name="carbs" required>
+								<label for="sugar">Sugar (g)</label>
+								<input type="number" id="sugar" name="sugar" required>
+								<label for="cost">How much did the meal cost? ($)</label>
+								<input type="number" id="cost" name="cost" step="0.01" required>
+								<button id="mealButton" type="button">Log Meal</button>
+							</form>
+						</div>
+
+						<div class="result-section">
+							<h2>Daily Summary</h2>
+							<p>Total Calories Consumed: <span id="totalCalories">0</span></p>
+							<p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
+							<p>Goal Status: <span id="goalStatus">in progress</span></p>
+						</div>
+				</div>
+			</div>
+
+
+	</main>
+
+	<script src="./goals.js"></script>
+</body>
+
+</html>
