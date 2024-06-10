@@ -1,3 +1,17 @@
+.html {
+    height: 100%;
+    background: rgb(157, 200, 238);
+    background: radial-gradient(circle, rgba(157, 200, 238, 1) 16%, rgba(94, 164, 229, 1) 63%, rgba(10, 117, 216, 1) 100%);
+}
+
+.en {
+    height: 100%;
+    background: rgb(157, 200, 238);
+    background: radial-gradient(circle, rgba(157, 200, 238, 1) 16%, rgba(94, 164, 229, 1) 63%, rgba(10, 117, 216, 1) 100%);
+}
+
+
+
 .logo {
     width: px;
     height: 70px;
@@ -5,13 +19,25 @@
     justify-content: flex-end;
     justify-content: space-between;
 }
-
+a {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
 .ww {
-    width: 125px;
+    width: px;
     height: 90;
     display: flex;
-    flex-direction: column
+    justify-content: flex-end;
+    justify-content: space-between;
+    justify-self: right ;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    line-height: 1.6;
+    color: #333;
+   
 }
+
 
 [id="h22"] {
     background-color: #366cca;
@@ -124,4 +150,40 @@ h1 {
     border: 1px#1f8dd2;
     width: 50px;
     height: 50px;
+}
+.name{
+    background-color: rgb(40, 155, 221);
+
+    color: white;
+    text-align: center;
+
+    width: 63vw;
+    height: 300PX;
+    margin: auto;
+
+    padding: 1rem;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 4px rgba(21, 21, 21, 0.1);
+}
+.Goal{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    color: #1d8ae3;
+}
+.get{
+    width: 11vw;
+    background-color: rgb(255, 255, 255);
+    text-decoration: #181818;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 4px rgba(21, 21, 21, 0.1);
+    color: rgb(204, 61, 61);
 }
