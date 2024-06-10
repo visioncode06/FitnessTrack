@@ -1,5 +1,6 @@
 //get reference to each input option
 // MEAL / NUTRITION TRACKER LOGIC
+const mealNameInput = document.getElementById("mealName");
 const mealTimeInput = document.getElementById("mealTime");
 const fatInput = document.getElementById("fat");
 const proteinInput = document.getElementById("protein");
@@ -27,7 +28,7 @@ function addMeal() {
   mealItem.classList.add("mealItem");
   mealItem.innerHTML = `
         <ul>
-        <p> Insert Meal Name</p>
+        <p>${mealNameInput.value}</p>
         <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo"></div>
             <li>Fat: ${fatInput.value}g</li>
             <li>protein: ${proteinInput.value}g</li>
@@ -41,6 +42,7 @@ function addMeal() {
   resultSection.appendChild(mealItem);
 
   //clear input values
+  mealNameInput.value = "";
   fatInput.value = "";
   proteinInput.value = "";
   caloriesInput.value = "";
