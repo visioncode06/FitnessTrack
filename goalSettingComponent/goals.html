@@ -14,6 +14,7 @@
 	<header>
 		<h1>Achieve Your Goals</h1>
 		<p>Track your meals and fitness to achieve your health goals</p>
+		<div class="homeButton"><a href="../index.html">🏠Home</a></div>
 	</header>
 
 	<main>
@@ -87,20 +88,22 @@
 					<h3>Log Your Meal</h1>
 						<div class="form-section">
 							<form id="mealForm">
+								<label for="mealName">What did you eat?</label>
+								<input id="mealName" required placeholder="Enter the Meal" type="text">
 								<label for="mealTime">When did you eat the meal?</label>
 								<input type="datetime-local" id="mealTime" name="mealTime" required>
 								<label for="fat">Fat (g)</label>
-								<input type="number" id="fat" name="fat" required>
+								<input type="number" id="fat" name="fat" value="0" required>
 								<label for="protein">Protein (g)</label>
-								<input type="number" id="protein" name="protein" required>
+								<input type="number" id="protein" name="protein" value="0" required>
 								<label for="calories">Calories</label>
-								<input type="number" id="calories" name="calories" required>
+								<input type="number" id="calories" name="calories" value="0" required>
 								<label for="carbs">Carbs (g)</label>
-								<input type="number" id="carbs" name="carbs" required>
+								<input type="number" id="carbs" name="carbs" value="0" required>
 								<label for="sugar">Sugar (g)</label>
-								<input type="number" id="sugar" name="sugar" required>
+								<input type="number" id="sugar" name="sugar" value="0" required>
 								<label for="cost">How much did the meal cost? ($)</label>
-								<input type="number" id="cost" name="cost" step="0.01" required>
+								<input type="number" id="cost" name="cost" step="0.01" value="0" required>
 								<button id="mealButton" type="button">Log Meal</button>
 							</form>
 						</div>
@@ -110,6 +113,15 @@
 							<p>Total Calories Consumed: <span id="totalCalories">0</span></p>
 							<p>Remaining Calories for the Day: <span id="remainingCalories">0</span></p>
 							<p>Goal Status: <span id="goalStatus">In progress</span></p>
+							<div id="viewMore">Click to view <span id="viewMoreText">more +</span></div>
+							<div id="viewMoreContent">
+								<p>Number of Meals: <span id="mealCount">0</span></p>
+								<p>Total Fat: <span id="fatStats">0</span>g</p>
+								<p>Total Protein: <span id="proteinStats">0</span>g</p>
+								<p>Total Carbs: <span id="carbsStats">0</span>g</p>
+								<p>Total Sugar: <span id="sugarStats">0</span>g</p>
+								<p>Total Cost: $<span id="costStats">0</span></p>
+							</div>
 						</div>
 				</div>
 

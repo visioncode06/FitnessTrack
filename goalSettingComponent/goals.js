@@ -1,5 +1,6 @@
 //get reference to each input option
 // MEAL / NUTRITION TRACKER LOGIC
+const mealNameInput = document.getElementById("mealName");
 const mealTimeInput = document.getElementById("mealTime");
 const fatInput = document.getElementById("fat");
 const proteinInput = document.getElementById("protein");
@@ -15,6 +16,8 @@ const meals = [];
 //on log meal click => addmeal()
 logMealButton.addEventListener("click", () => {
   logMeal(); //log goes first because add meal clear input which is needed for log meal
+  updateMealStats();
+  updateMealStatsText();
   addMeal();
   calculateDailyIntake();
   updateGoalStatus();
@@ -27,27 +30,29 @@ function addMeal() {
   mealItem.classList.add("mealItem");
   mealItem.innerHTML = `
         <ul>
-        <p> Insert Meal Name</p>
-        <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo"></div>
-            <li>Fat: ${fatInput.value}g</li>
-            <li>protein: ${proteinInput.value}g</li>
-            <li>calories: ${caloriesInput.value}g</li>
-            <li>carbs: ${carbsInput.value}g</li>
-            <li>sugar: ${sugarInput.value}g</li>
-            <li>cost: $${costInput.value}</li>
-          </ul>`;
+          <p class="mealItemName">${mealNameInput.value}</p>
+          <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo">
+          </div>
+          <li>Fat: ${fatInput.value}g</li>
+          <li>Protein: ${proteinInput.value}g</li>
+          <li>Calories: ${caloriesInput.value}g</li>
+          <li>Carbs: ${carbsInput.value}g</li>
+          <li>Sugar: ${sugarInput.value}g</li>
+          <li>Cost: $${costInput.value}</li>
+        </ul>`;
   meals.push(mealItem);
   //add to end of result section (daily summary)
   resultSection.appendChild(mealItem);
 
   //clear input values
-  fatInput.value = "";
-  proteinInput.value = "";
-  caloriesInput.value = "";
+  mealNameInput.value = "";
+  fatInput.value = 0;
+  proteinInput.value = 0;
+  caloriesInput.value = 0;
   mealTimeInput.value = "";
-  carbsInput.value = "";
-  sugarInput.value = "";
-  costInput.value = "";
+  carbsInput.value = 0;
+  sugarInput.value = 0;
+  costInput.value = 0;
 }
 
 //code from thomas' html just moved over here
@@ -56,7 +61,7 @@ function logMeal() {
   let calories = parseInt(caloriesInput.value);
   totalCalories += calories;
   document.getElementById("totalCalories").innerText = totalCalories;
-  alert("Meal logged successfully!");
+  //alert("Meal logged successfully!");
 }
 
 function calculateDailyIntake() {
@@ -141,7 +146,7 @@ function setGoal() {
 //object that store all our nutritional goals
 let mealGoals = {
   calories: 2000,
-  comparison: "",
+  comparison: "<=",
 };
 
 // if <= and if remaining calories is negative then goal failed, else achieved
@@ -159,5 +164,70 @@ function updateGoalStatus() {
   if (comparison === ">=" && remainingCalories < 0) {
     goalStatusText.textContent = "Goal Achieved";
     goalStatusText.style.color = "green";
+  }
+}
+
+/* view more code */
+let isViewMoreOn = false; // content hidden by default
+const viewMoreButton = document.getElementById("viewMore");
+const viewMoreContent = document.getElementById("viewMoreContent");
+const viewMoreText = document.getElementById("viewMoreText");
+
+//onclick toggle view more content
+viewMoreButton.addEventListener("click", () => {
+  viewMore();
+});
+
+//get stat texts
+let statsText = [
+  document.getElementById("mealCount"),
+  document.getElementById("fatStats"),
+  document.getElementById("proteinStats"),
+  document.getElementById("carbsStats"),
+  document.getElementById("sugarStats"),
+  document.getElementById("costStats"),
+];
+//set stat texts to meal stats
+function updateMealStatsText() {
+  statsText[0].textContent = mealStats.mealCount;
+  statsText[1].textContent = mealStats.Fat;
+  statsText[2].textContent = mealStats.Protein;
+  statsText[3].textContent = mealStats.Carbs;
+  statsText[4].textContent = mealStats.Sugar;
+  statsText[5].textContent = mealStats.Cost;
+}
+//update meal stats object based on user input
+function updateMealStats() {
+  mealStats.mealCount++;
+  mealStats.Fat += parseInt(fatInput.value);
+  mealStats.Protein += parseInt(proteinInput.value);
+  mealStats.Carbs += parseInt(carbsInput.value);
+  mealStats.Sugar += parseInt(sugarInput.value);
+  mealStats.Cost += parseInt(costInput.value);
+}
+//keep track of meal stats
+const mealStats = {
+  //num of meals
+  mealCount: 0,
+  //all total
+  Fat: 0,
+  Protein: 0,
+  Carbs: 0,
+  Sugar: 0,
+  Cost: 0,
+};
+
+//toggle view more content
+function viewMore() {
+  //flip or toggle value
+  isViewMoreOn = !isViewMoreOn;
+  if (isViewMoreOn) {
+    // if on show content
+    viewMoreText.textContent = "less -";
+    viewMoreContent.style.display = "block";
+  } else {
+    //else hide content
+    viewMoreText.textContent = "more +";
+    viewMoreContent.style.display = "none";
   }
 }
