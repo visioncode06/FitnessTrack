@@ -66,6 +66,7 @@ body {
     text-align: center;
     font-size: 3rem;
     transition: .3s ease;
+    z-index:998;
 }
 
 .off-screen-menu.active {
@@ -113,6 +114,7 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: .3s ease;
+    z-index:999;
 }
 
 .ham-menu span:nth-child(1) {
