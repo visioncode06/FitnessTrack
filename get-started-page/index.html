@@ -10,11 +10,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="../components/Hamburger/ham.css">
+
+
 </head>
 
 <body>
     <header>
-        <a id="titleHome"href="../index.html"><h1>Pulse Fit</h1></a>
+
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="../get-started-page/index.html">Get Started</a></li>
+                <li><a href="../goalSettingComponent/goals.html">Set A Goal</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <div class="logo"><img src="heart1.png" alt="heart image">
+            </div>
+            <div class="navh1p">
+                <h1 class="black">FitPulse</h1>
+
+                <p class="black">Your Ultimate Fitness Companion</p>
+            </div>
+
+
+
+
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
     </header>
 
     <h2 id="3EasyStepsSubTitle">Raise your Pulse in 1-2-3</h2>
@@ -48,6 +79,8 @@
     </div>
 
     <footer></footer>
+
+    <script src="../components/Hamburger/ham.js"></script>
 </body>
 
 </html>
