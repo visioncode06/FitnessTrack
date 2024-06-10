@@ -83,3 +83,16 @@ h1,h2,h3 {
     color:#13a3dc;
     background-color: white;
 }
+.mealItem{
+    border: #13a3dc 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+.mealItem li {
+    list-style-type:square;
+}
+.mealItemName{
+    font-weight: bold;
+}

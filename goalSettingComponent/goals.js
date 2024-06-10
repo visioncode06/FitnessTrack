@@ -28,28 +28,29 @@ function addMeal() {
   mealItem.classList.add("mealItem");
   mealItem.innerHTML = `
         <ul>
-        <p>${mealNameInput.value}</p>
-        <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo"></div>
-            <li>Fat: ${fatInput.value}g</li>
-            <li>protein: ${proteinInput.value}g</li>
-            <li>calories: ${caloriesInput.value}g</li>
-            <li>carbs: ${carbsInput.value}g</li>
-            <li>sugar: ${sugarInput.value}g</li>
-            <li>cost: $${costInput.value}</li>
-          </ul>`;
+          <p class="mealItemName">${mealNameInput.value}</p>
+          <div>Ate at: <input type="datetime-local" readonly value="${mealTimeInput.value}" id="dueDateInfo">
+          </div>
+          <li>Fat: ${fatInput.value}g</li>
+          <li>Protein: ${proteinInput.value}g</li>
+          <li>Calories: ${caloriesInput.value}g</li>
+          <li>Carbs: ${carbsInput.value}g</li>
+          <li>Sugar: ${sugarInput.value}g</li>
+          <li>Cost: $${costInput.value}</li>
+        </ul>`;
   meals.push(mealItem);
   //add to end of result section (daily summary)
   resultSection.appendChild(mealItem);
 
   //clear input values
   mealNameInput.value = "";
-  fatInput.value = "";
-  proteinInput.value = "";
-  caloriesInput.value = "";
+  fatInput.value = 0;
+  proteinInput.value = 0;
+  caloriesInput.value = 0;
   mealTimeInput.value = "";
-  carbsInput.value = "";
-  sugarInput.value = "";
-  costInput.value = "";
+  carbsInput.value = 0;
+  sugarInput.value = 0;
+  costInput.value = 0;
 }
 
 //code from thomas' html just moved over here
@@ -58,7 +59,7 @@ function logMeal() {
   let calories = parseInt(caloriesInput.value);
   totalCalories += calories;
   document.getElementById("totalCalories").innerText = totalCalories;
-  alert("Meal logged successfully!");
+  //alert("Meal logged successfully!");
 }
 
 function calculateDailyIntake() {
@@ -143,7 +144,7 @@ function setGoal() {
 //object that store all our nutritional goals
 let mealGoals = {
   calories: 2000,
-  comparison: "",
+  comparison: "<=",
 };
 
 // if <= and if remaining calories is negative then goal failed, else achieved
