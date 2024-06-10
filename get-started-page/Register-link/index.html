@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../components/Hamburger/ham.css">
 </head>
 <body>
     <header>
-        <a id="titleHome"href="../../index.html"><h1>Pulse Fit</h1></a>
+
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <div class="logo"><img src="../../images/heart1.png" alt="heart image">
+            </div>
+            <div class="navh1p">
+                <h1 class="black">FitPulse</h1>
+
+                <p class="black">Your Ultimate Fitness Companion</p>
+            </div>
+
+
+
+
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
 <!-- MultiStep Form -->
@@ -53,6 +80,6 @@
 </div>
 <!-- /.MultiStep Form -->
 
-
+<script src="../../components/Hamburger/ham.js"></script>
 </body>
 </html>
